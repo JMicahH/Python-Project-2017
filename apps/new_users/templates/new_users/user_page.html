@@ -5,23 +5,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'new_users/css/styles.css' %}">
         <title>{{user.first_name}}'s Profile</title>
     </head>
     <body>
-        <div class="row bg-primary p-3 justify-content-between">
-            <h2 class="text-primary ml-5 bg-white p-2 rounded">Match.com</h2>
+        <div id="header" class="row bg-primary p-3 justify-content-between">
+            <h2 id="logo_text" class="text-primary ml-5 bg-white p-2 rounded">Match.com</h2>
             <div class="col-5">
                 <div class="row justify-content-end mr-2">
                     <a href="/messages/"><button class="btn btn-link btn-lg text-white">Inbox</button></a>
                     <a href="/users/{{request.session.logged_in_user}}"><button class="btn btn-link btn-lg text-white">Profile</button></a>
                     <a href="/matches/1/"><button class="btn btn-link btn-lg text-white">Home</button></a>
-                    <a href="/logout/"><button class="btn btn-danger btn-lg">Logout</button></a>
+                    <a href="/logout/"><button id="logout_button" class="btn btn-danger btn-lg">Logout</button></a>
                 </div>
             </div>
         </div>
         <div class="container">
-            {{user.first_name}} {{user.last_name}}'s Profile!<br>
-            Description: {{profile.desc}}<br><br>
+            <p id='profile_username'>
+            {{user.first_name}} {{user.last_name}}'s Profile!</p>
+                {% if profile.sex == 'Male' %}
+                <img class='profile_pic' src="../../../static/new_users/images/profile_pic_male.png">
+                {% endif %}
+
+                {% if profile.sex == 'Female' %}                
+                <img class='profile_pic' src="../../../static/new_users/images/profile_pic_female.png">
+                {% endif %}
+
+            <p id='profile_description'>Description: {{profile.desc}}</p><br><br>
 
 
             Sex: {{profile.sex}}<br>

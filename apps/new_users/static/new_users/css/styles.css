@@ -1,0 +1,37 @@
+#header{
+    background-color: #1f5b8e !important;
+}
+
+#logo_text{
+    color: #e20269 !important;
+}
+
+#logout_button{
+    background-color: #269fb3 !important;
+    border-color: #269fb3 !important;
+}
+
+#profile_username{
+    font-size: 35px;
+    margin: 34px 0px;
+    color: #1f5b8e;
+}
+
+.profile_pic {
+    width: 245px;
+    height: 245px;
+    border: 1px dotted #D1D1D1;
+    box-shadow: 2px 2px 4px #D1D1D1;
+}
+
+#profile_description{
+    margin: 10px 0px;
+}
+
+a {
+    color: #269fb3 !important;
+}
+
+a:hover {
+    color: #e20269 !important;    
+}
